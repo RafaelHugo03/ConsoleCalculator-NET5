@@ -16,6 +16,7 @@ namespace Calculator
             Console.WriteLine("3 - Multiplication");
             Console.WriteLine("4 - divison");
             Console.WriteLine("5 - Potentiation");
+            Console.WriteLine("6 - Square Root");
 
             Console.Write("Which Calculation?  ");
             var op = short.Parse(Console.ReadLine());
@@ -28,6 +29,7 @@ namespace Calculator
                 case 3: Multiplication(); break;
                 case 4: Division(); break;
                 case 5: Potentiation(); break;
+                case 6: SquareRoot(); break;
                 default: Console.WriteLine("choose an option between 0 and 5!!"); Menu(); break;
             }
         }
@@ -117,6 +119,22 @@ namespace Calculator
             Console.WriteLine("The potentiation result is " + result.ToString("F2", CultureInfo.InvariantCulture));
             Console.ReadKey();
             Menu();
+        }
+
+        static void SquareRoot()
+        {
+            Console.Clear();
+            Console.WriteLine("Hi, Welcome to Square Root");
+            Console.WriteLine();
+            Console.Write("You want to know the square root of which number? ");
+            var n1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            var result = Math.Sqrt(n1);
+            Console.WriteLine();
+            Console.WriteLine($"The square root of {n1} is " + result.ToString("F2", CultureInfo.InvariantCulture));
+            Console.ReadKey();
+            Menu();
+
         }
     }
 }
